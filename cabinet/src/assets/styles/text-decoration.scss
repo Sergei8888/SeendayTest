@@ -1,0 +1,23 @@
+.text,
+.text-bold {
+  display: inline;
+
+  &[data-color="light-purple"] {
+    color: var(--color_secondary);
+  }
+  &[data-color="green"] {
+    color: var(--color_green);
+  }
+  &[data-color="red"] {
+    color: var(--color_red);
+  }
+  &[data-color="orange"] {
+    color: var(--color_orange);
+  }
+  &[data-color="blue"] {
+    color: var(--color_blue);
+  }
+  &[data-color="light-blue"] {
+    color: var(--color_light_blue);
+  }
+}

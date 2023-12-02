@@ -1,0 +1,212 @@
+.input {
+    height: $heightInput;
+
+    text-align: center;
+
+    // border: $border-width solid var(--border_input);
+
+    border: 1px solid transparent;
+    box-shadow: var(--box_shadow_block);
+
+    border-radius: $border-radius;
+    outline: none;
+
+    font-size: 14px*$tem;
+    line-height : 1.1;
+    font-family: $font-family-base;
+    
+    -webkit-text-size-adjust: none;
+
+    &[type="file"] {
+        width: 100%;
+        height: 32px;
+    }
+
+    &[data-show="hidden"] {
+        display: none;
+    }
+
+    &.short {
+        width: 40px;
+    }
+
+    &.text-left {
+      padding-left: 10px*$rem;
+      padding-right: 16px*$rem;
+      text-align: left;
+    }
+
+    &[data-color="black"] {
+        background-color: var(--bg_input_secondary);
+        border-color: var(--border_input_secondary);
+
+        transition: all 0.3s ease;
+
+        color: var(--color_input_secondary);
+
+        &:hover {
+            background-color: var(--bg_hover_input_secondary);
+        }
+
+        &:focus {
+            background-color: var(--bg_focus_input_secondary);
+        }
+    }
+
+    &:focus {
+        border: 1px solid;
+        border-color: var(--border_focus_input);
+    }
+}
+
+.textfield {
+    position: relative;
+
+    height: 44px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+
+    box-shadow: var(--box_shadow_block);
+    border-radius: $border-radius;
+    border: 1px solid transparent;
+
+    outline: none;
+
+    &:focus,
+    &:active,
+    &:focus-visible {
+        outline: none;
+    }
+
+    &.success {
+        & .textfield__check {
+            opacity: 1;
+        }
+    }
+
+    &.error:focus-within {
+        border: 1px solid;
+        border-color: var(--color_danger);
+        background-color: transparent;
+    }
+
+    &.error {
+        background-color: rgba(224,31,25,.12);
+        box-shadow: none;
+    }
+
+    &:focus-within {
+        border: 1px solid;
+        border-color: var(--border_focus_input);
+        box-shadow: none;
+
+        & .textfield__label {
+            transform: scale(0.7) translateY(-10px);
+            opacity: 1;
+        }
+    }
+
+    &.fill {
+        & .textfield__label {
+            transform: scale(0.7) translateY(-10px);
+            opacity: 1;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+
+        align-self: stretch;
+        display: flex;
+        flex: 1 1 auto;
+        margin: 0 0 0 4px;
+        min-width: 0;
+        width: 100%;
+    }
+
+    &__check {
+        align-items: flex-end;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 16px;
+        color: var(--color_success);
+
+        opacity: 0;
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        display: block;
+        margin: 5px 0;
+
+        transform: scale(1) translateY(0);
+   
+        letter-spacing: normal;
+        opacity: 0.6;
+
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        transform-origin: 0 0;
+        transition: all .25s ease;
+        white-space: nowrap;
+        will-change: color;
+
+        &[required]::after {
+            content: "*";
+        }
+    }
+
+    &_large {
+        height: 54px;
+    }
+
+    &_large &__label {
+        margin: 9px 0px;
+    }
+
+    &__input {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-top: 14px;
+
+
+        box-shadow: none;
+        text-align: left;
+        background-color: transparent;
+
+        &[type="number"]::-webkit-outer-spin-button,
+        &[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type="number"],
+        &[type="number"]:hover,
+        &[type="number"]:focus {
+            appearance: none;
+            -moz-appearance: textfield;
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}

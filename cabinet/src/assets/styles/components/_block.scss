@@ -1,0 +1,60 @@
+//Общие стили для блоков, обводка, радиус
+.block {
+    display: block;
+    
+    // border: $block-border-width solid var(--border_block);
+    background-color: var(--bg_block);
+    border-radius: $block-border-radius;
+
+    box-shadow: var(--box_shadow_block);
+}
+
+block-nav-wrapper {
+    &[overflow-hidden] {
+        overflow: hidden;
+    }
+}
+
+block-nav-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    //блок остается на месте  при скролле. нужно задать фикс. ширину, чтобы не расстягивался на всю ширину
+    &[data-fixed="fixed"] {
+        @include start-at("xslg") {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        @include start-at("lg") {
+            position: fixed;   
+            width: 27.5%;
+        }
+
+        @include start-at("xl") {
+            width: 235px*$rem;
+        }
+
+        &.statement, &.disc {
+            @include start-at("lg") {
+                width: 235px*$rem;
+            }
+        }
+        &[data-page="assistants"] {
+            @include start-at("lg") {
+                position: relative;
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    
+}
+
+.nav-content {
+    &__btn {
+        margin-bottom: 15px;
+    }
+}

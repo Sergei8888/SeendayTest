@@ -1,0 +1,26 @@
+.status-card {
+    border-radius: 3px;
+    border-left-width: 10px;
+    border-left-style: solid;
+    border-left-color: var(--border_info_block_disabled);
+
+    &[data-status=green] {
+        border-left-color: var(--color_green);
+    }
+
+    &[data-status=blue] {
+        border-left-color: var(--color_blue);
+    }
+
+    &[data-status=light-purple] {
+        border-left-color: var(--color_secondary);
+    }
+
+    &[data-status=primary] {
+        border-left-color: var(--color_primary);
+    }
+
+    &[data-status=red] {
+        border-left-color: var(--color_danger);
+    }
+}

@@ -1,0 +1,1 @@
+export { internalAPIFetch } from "./instance";
